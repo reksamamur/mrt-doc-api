@@ -1,0 +1,171 @@
+---
+import clipboard from '../../public/copy.svg'
+import github from '../../public/github.svg'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="title" content="MRT Jakarta API Documentation" />
+    <meta name="description" content="" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="MRT Jakarta API Documentation" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" itemprop="image" content="/banner.webp" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="" />
+    <meta property="twitter:title" content="MRT Jakarta API Documentation" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="/banner.webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>MRT Jakarta API Documentation</title>
+  </head>
+  <body>
+    <div class="container mx-auto px-4 lg:px-48 py-20 lg:py-56 space-y-6">
+      <div id="header" class="flex flex-col space-y-6">
+        <h1 class="text-6xl font-medium">MRT Jakarta API Documentation</h1>
+        <div class="flex items-center space-x-4">
+          <span class="text-lg font-source-code-pro font-medium">v1</span>
+          <a
+            href="https://github.com/reksamamur/mrt-jakarta-api"
+            target="_blank"
+            id="github.link"
+            class="flex items-center py-2 px-3 space-x-3 rounded-md cursor-pointer hover:bg-zinc-50 hover:text-blue-500"
+          >
+            <img src={github} alt="Github icon" class="stroke-blue-500" />
+            <span class="text-base font-semibold">Github</span>
+          </a>
+          <div>
+            <div>EN</div>
+            <div>ID</div>
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-between font-source-code-pro bg-zinc-50 border-2 border-zinc-100 rounded-lg p-4"
+        >
+          <a
+            href="https://mrt-jakarta-api-production.up.railway.app/v1"
+            class="hover:underline hover:text-blue-500"
+            target="_blank"
+            >https://mrt-jakarta-api-production.up.railway.app/v1</a
+          >
+
+          <button
+            class="p-2 border-[1.5px] text-zinc-800 border-zinc-200 hover:bg-zinc-100 hover:text-blue-500 rounded-lg"
+          >
+			<img src={clipboard} alt="Copy URL" />
+          </button>
+        </div>
+        <div class="border-b-2 border-zinc-300 rounded-full"></div>
+      </div>
+
+      <div id="content" class="space-y-3">
+        <h2 class="text-3xl font-medium">What is this?</h2>
+        <p class="text-base">Descriptions</p>
+      </div>
+
+      <div id="content" class="space-y-6">
+        <div id="stations" class="space-y-4">
+          <h1 class="font-medium py-2 text-2xl">Stations</h1>
+
+          <div class="space-y-1">
+            <h3 class="text-lg font-medium">Description</h3>
+            <p class="text-base">End point description</p>
+          </div>
+
+          <div class="space-y-1">
+            <h3 class="text-lg font-medium">URL</h3>
+            <div
+              class="flex items-center justify-between font-source-code-pro bg-zinc-50 border-2 border-zinc-100 rounded-lg p-4"
+            >
+              <a
+                href="https://mrt-jakarta-api-production.up.railway.app/v1"
+                class="hover:underline hover:text-blue-500"
+                target="_blank"
+                >https://mrt-jakarta-api-production.up.railway.app/v1</a
+              >
+
+              <button
+                class="p-2 border-[1.5px] text-zinc-800 border-zinc-200 hover:bg-zinc-100 hover:text-blue-500 rounded-lg"
+              >
+                <img src={clipboard} alt="Copy URL" />
+              </button>
+            </div>
+          </div>
+
+          <h1>example</h1>
+        </div>
+        <div id="station.id">
+          <h1>End point</h1>
+          <h1>end point name</h1>
+          <h1>url api</h1>
+          <h1>example</h1>
+        </div>
+        <div id="station.id.schedules">
+          <h1>End point</h1>
+          <h1>end point name</h1>
+          <h1>url api</h1>
+          <h1>example</h1>
+        </div>
+        <div id="station.id.schedules.now">
+          <h1>End point</h1>
+          <h1>end point name</h1>
+          <h1>url api</h1>
+          <h1>example</h1>
+        </div>
+        <div id="station.id.schedules.milliseconds">
+          <h1>End point</h1>
+          <h1>end point name</h1>
+          <h1>url api</h1>
+          <h1>example</h1>
+        </div>
+        <div id="station.id.retails">
+          <h1>End point</h1>
+          <h1>end point name</h1>
+          <h1>url api</h1>
+          <h1>example</h1>
+        </div>
+        <div id="station.id.facilities">
+          <h1>End point</h1>
+          <h1>end point name</h1>
+          <h1>url api</h1>
+          <h1>example</h1>
+        </div>
+        <div id="station.id.estimates.next_id">
+          <h1>End point</h1>
+          <h1>end point name</h1>
+          <h1>url api</h1>
+          <h1>example</h1>
+        </div>
+      </div>
+
+      <div id="footer" class="flex flex-col space-y-4">
+        <div>
+          <h2 class="text-2xl font-medium">API reference</h2>
+
+          <div>
+            Resource Information
+            <li>Response format</li>
+            <li>Require auth?</li>
+            <li>Rate limited?</li>
+          </div>
+          <div>Parameters</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
