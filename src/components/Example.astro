@@ -1,0 +1,35 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  path: string;
+  //   iframeURL: string;
+}
+
+const { title, description, path } = Astro.props;
+---
+
+<div class="space-y-6">
+  <h1 class="font-medium py-2 text-4xl">{title}</h1>
+
+  <div class="space-y-2">
+    <h3 class="text-3xl font-medium">Path</h3>
+    <div class="flex">
+      <p
+        class="bg-gray-100 p-1 rounded text-red-600 font-source-code-pro text-2xl"
+      >
+        {path}
+      </p>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <h3 class="text-3xl font-medium">Description</h3>
+    <p class="text-lg">{description}</p>
+  </div>
+
+  <div class="space-y-4">
+    <h3 class="text-3xl font-medium">Example</h3>
+    
+  </div>
+</div>
