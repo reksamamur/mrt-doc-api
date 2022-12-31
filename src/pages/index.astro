@@ -69,6 +69,13 @@ import ExampleComponent from "../components/Example.astro";
           <li><a class="hover:underline" href="#what">Ringkasan</a></li>
           <li><a class="hover:underline" href="#feature">Fitur</a></li>
           <li class="space-y-1">
+            <a class="hover:underline" href="#api_reference">API referensi</a>
+            <ul class="ml-2 space-y-1 max-w-md list-inside text-zinc-500">
+              <li><a class="hover:underline" href="#api_url">API URL</a></li>
+              <li><a class="hover:underline" href="#resource_information">Informasi</a></li>
+            </ul>
+          </li>
+          <li class="space-y-1">
             <a class="hover:underline" href="#content">Konten</a>
             <ul class="ml-2 space-y-1 max-w-md list-inside text-zinc-500">
               <li><a class="hover:underline" href="#stations">Semua Stasiun</a></li>
@@ -99,6 +106,33 @@ import ExampleComponent from "../components/Example.astro";
         <li>Data schedule dari salah satu station MRT</li>
         <li>Data estimasi antar 2 station MRT</li>
       </ul>
+    </div>
+
+    <div id="api_reference" class="space-y-6">
+      <a class="text-2xl font-medium hover:underline" href="#api_reference">API referensi</a>
+      <div id="api_url" class="space-y-3">
+        <a class="text-xl font-medium hover:underline" href="#api_url">API URL</a>
+        <p>
+          <a href="https://mrt-jakarta-api-production.up.railway.app/v1" class="py-2 px-4 border rounded-md bg-zinc-50 hover:underline hover:text-blue-500" target="_blank">https://mrt-jakarta-api-production.up.railway.app/v1</a>
+        </p>
+      </div>
+      <div id="resource_information" class="space-y-2">
+        <a class="text-xl font-medium hover:underline" href="#resource_information">Informasi</a>
+        <table class="w-fit border text-left">
+          <tr>
+            <th class="p-2 border-b bg-gray-50">Response Format</th>
+            <td class="p-2 border-b border-l bg-white">JSON</td>
+          </tr>
+          <tr>
+            <th class="p-2 border-b bg-gray-50">Requires Authentication?</th>
+            <td class="p-2 border-b border-l bg-white">No</td>
+          </tr>
+          <tr>
+            <th class="p-2 border-b bg-gray-50">Rate limited</th>
+            <td class="p-2 border-b border-l bg-white">Yes</td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <div id="content" class="space-y-20">
