@@ -3,9 +3,10 @@ import clipboard from "../../public/copy.svg";
 import banner from "../../public/banner.webp";
 
 import ExampleComponent from "../components/Example.astro";
+
 ---
 
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,19 +14,28 @@ import ExampleComponent from "../components/Example.astro";
     <meta name="generator" content={Astro.generator} />
 
     <meta name="title" content="MRT Jakarta API Documentation" />
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="MRT Jakarta API adalah sebuah API yang menampilkan data seperti jadwal, estimasi dan detail station MRT Jakarta."
+    />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="https://mrt-doc-api.vercel.app/" />
     <meta property="og:title" content="MRT Jakarta API Documentation" />
-    <meta property="og:description" content="" />
+    <meta
+      property="og:description"
+      content="MRT Jakarta API adalah sebuah API yang menampilkan data seperti jadwal, estimasi dan detail station MRT Jakarta."
+    />
     <meta property="og:image" itemprop="image" content={banner} />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="" />
-    <meta property="twitter:title" content="MRT Jakarta API Documentation" />
-    <meta property="twitter:description" content="" />
-    <meta property="twitter:image" content={banner} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mrt-doc-api.vercel.app/" />
+    <meta name="twitter:title" content="MRT Jakarta API Documentation" />
+    <meta
+      name="twitter:description"
+      content="MRT Jakarta API adalah sebuah API yang menampilkan data seperti jadwal, estimasi dan detail station MRT Jakarta."
+    />
+    <meta name="twitter:image" content={banner} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,216 +51,172 @@ import ExampleComponent from "../components/Example.astro";
     ></script>
   </head>
 
-  <body class="md:container md:mx-auto px-10 py-20 space-y-6">
+  <body class="md:container md:mx-auto px-10 py-20 space-y-12">
     <div id="header" class="flex flex-col space-y-8">
-      <h1 class="text-6xl font-medium">MRT Jakarta API Documentation</h1>
-      <div class="flex items-center space-x-3">
-        <span
-          class="text-base py-2 px-3 border-2 border-zinc-300 rounded-md font-source-code-pro font-medium"
-          >v1</span
-        >
-        <a
-          href="https://github.com/reksamamur/mrt-jakarta-api"
-          target="_blank"
-          id="github.link"
-          class="flex items-center py-2 px-3 space-x-3 border-2 border-zinc-300 rounded-md cursor-pointer hover:bg-zinc-50 hover:text-blue-500"
-        >
-          <span class="text-base font-semibold">Github</span>
-        </a>
-        <div class="flex space-x-2">
-          <div
-            class="py-2 px-3 border-2 border-zinc-300 rounded-md cursor-pointer hover:bg-zinc-50 hover:text-blue-500"
-          >
-            EN
-          </div>
-          <div
-            class="py-2 px-3 border-2 border-zinc-300 rounded-md cursor-pointer hover:bg-zinc-50 hover:text-blue-500"
-          >
-            ID
-          </div>
-        </div>
+      <div>
+        <p class="text-sm font-mono font-bold py-3 w-full">V1</p>
+        <h1 class="text-3xl font-medium">MRT Jakarta API Dokumentasi</h1>
       </div>
-      <div
-        class="flex items-center justify-between font-source-code-pro bg-zinc-50 border-2 border-zinc-100 rounded-lg p-4"
-      >
-        <a
-          href="https://mrt-jakarta-api-production.up.railway.app/v1"
-          class="hover:underline hover:text-blue-500"
-          target="_blank"
-          >https://mrt-jakarta-api-production.up.railway.app/v1</a
-        >
 
-        <button
-          class="p-2 border-[1.5px] text-zinc-800 border-zinc-200 hover:bg-zinc-100 hover:text-blue-500 rounded-lg"
-        >
-          <img src={clipboard} alt="Copy URL" />
-        </button>
+      <div class="flex overflow-auto space-x-10">
+        <a class="hover:underline hover:bg-zinc-50 hover:text-blue-500" target="_blank" href="https://github.com/reksamamur/mrt-jakarta-api">Github MRT Jakarta API</a>
       </div>
-      <div class="border-b-2 border-zinc-300 rounded-full"></div>
+
+      <div class="border-b-2 border-zinc-100 rounded-full"></div>
+
+      <div>
+        <ul class="space-y-1 max-w-md list-inside text-zinc-500">
+          <li><a class="hover:underline" href="#what">Ringkasan</a></li>
+          <li><a class="hover:underline" href="#feature">Fitur</a></li>
+          <li class="space-y-1">
+            <a class="hover:underline" href="#content">Konten</a>
+            <ul class="ml-2 space-y-1 max-w-md list-inside text-zinc-500">
+              <li><a class="hover:underline" href="#stations">Semua Stasiun</a></li>
+              <li><a class="hover:underline" href="#station_id">Stasiun (station id)</a></li>
+              <li><a class="hover:underline" href="#schedules">Jadwal stasiun (station id)</a></li>
+              <li><a class="hover:underline" href="#schedule_now">Jadwal stasiun sekarang (stasiun id)</a></li>
+              <li><a class="hover:underline" href="#schedule_milliseconds">Jadwal stasiun berdasarkan milidetik(stasiun id)</a></li>
+              <li><a class="hover:underline" href="#estimate">Estimasi dari (stasiun id) ke (stasiun id)</a></li>
+              <li><a class="hover:underline" href="#retail">Retail stasiun (stasiun id)</a></li>
+              <li><a class="hover:underline" href="#facilities">Fasilitas stasiun (stasiun id)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="border-b-2 border-zinc-100 rounded-full"></div>
     </div>
 
-    <div id="content" class="space-y-3">
-      <h2 class="text-4xl font-medium">What is this?</h2>
-      <p class="text-base">Descriptions</p>
+    <div id="what" class="space-y-2">
+      <a class="text-2xl font-medium hover:underline" href="#what">Overview</a>
+      <p class="text-base">MRT Jakarta API adalah sebuah API yang menampilkan data seperti jadwal, estimasi dan detail station MRT Jakarta. Data ini diambil dari hasil scrap web jakartamrt yang kemudian di cache menggunakan Redis</p>
     </div>
 
-    <div id="content" class="space-y-6">
-      <div id="stations" class="space-y-4">
-        <h1 class="font-medium py-2 text-3xl">Stations</h1>
+    <div id="feature" class="space-y-2">
+      <a class="text-2xl font-medium hover:underline" href="#feature">Feature</a>
+      <ul class="space-y-1 list-decimal list-inside">
+        <li>Semua data station MRT</li>
+        <li>Data schedule dari salah satu station MRT</li>
+        <li>Data estimasi antar 2 station MRT</li>
+      </ul>
+    </div>
 
-        <div class="space-y-1">
-          <h3 class="text-lg font-medium">Description</h3>
-          <p class="text-base">End point description</p>
-        </div>
-
-        <div class="space-y-1">
-          <h3 class="text-lg font-medium">URL</h3>
-          <div
-            class="flex items-center justify-between font-source-code-pro bg-zinc-50 border-2 border-zinc-100 rounded-lg p-4"
-          >
-            <a
-              href="https://mrt-jakarta-api-production.up.railway.app/v1/stations"
-              class="hover:underline hover:text-blue-500"
-              target="_blank"
-              >https://mrt-jakarta-api-production.up.railway.app/v1/stations</a
-            >
-
-            <button
-              class="p-2 border-[1.5px] text-zinc-800 border-zinc-200 hover:bg-zinc-100 hover:text-blue-500 rounded-lg"
-            >
-              <img src={clipboard} alt="Copy URL" />
-            </button>
-          </div>
-        </div>
-
-        <div class="space-y-1">
-          <h3 class="text-lg font-medium">Results</h3>
-          <iframe
-            style="width: 100%; height: 55vh;"
-            src="data:text/html;charset=utf-8,
-            <head><base target='_blank' /></head>
-            <body><script src='https://gist.github.com/reksamamur/77f1563dc46f73fb72bd92280007dee9.js'></script>
-            </body>"
-          ></iframe>
-        </div>
-      </div>
-
-      <div id="station.id" class="space-y-4">
-        <h1 class="font-medium py-2 text-3xl">Station (station id)</h1>
-
-        <div class="space-y-1">
-          <h3 class="text-lg font-medium">Description</h3>
-          <p class="text-base">End point description</p>
-        </div>
-
-        <div class="space-y-1">
-          <h3 class="text-lg font-medium">URL</h3>
-          <div
-            class="flex items-center justify-between font-source-code-pro bg-zinc-50 border-2 border-zinc-100 rounded-lg p-4"
-          >
-            <a class="hover:underline hover:text-blue-500"
-              >https://mrt-jakarta-api-production.up.railway.app/v1/station/(station
-              id)</a
-            >
-
-            <button
-              class="p-2 border-[1.5px] text-zinc-800 border-zinc-200 hover:bg-zinc-100 hover:text-blue-500 rounded-lg"
-            >
-              <img src={clipboard} alt="Copy URL" />
-            </button>
-          </div>
-        </div>
-
-        <div class="space-y-1">
-          <h3 class="text-lg font-medium">Example</h3>
-          <div>
-            <table class="w-fit border text-left">
-              <tr>
-                <th class="p-2 border-b bg-gray-50">URL</th>
-                <td class="p-2 border-b border-l bg-white">
-                  <a class="hover:underline hover:text-blue-500" href="https://mrt-jakarta-api-production.up.railway.app/v1/station/38" target="_blank">https://mrt-jakarta-api-production.up.railway.app/v1/station/38</a>
-                </td>
-              </tr>
-              <tr>
-                <th>Method</th>
-              </tr>
-              <tr>
-                <th class="p-2 border-b bg-gray-50">Parameter</th>
-                <td class="p-2 border-b border-l bg-white">38</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-
-        <div class="space-y-1">
-          <h3 class="text-lg font-medium">Results</h3>
-          <iframe
-            style="width: 100%; height: 55vh;"
-            src="data:text/html;charset=utf-8,
-            <head><base target='_blank' /></head>
-            <body><script src='https://gist.github.com/reksamamur/c854c6bdc58fbab5599c9406d3fb5f4f.js'></script>
-            </body>"
-          ></iframe>
-        </div>
-      </div>
-      
-      <div id="station.id.schedules">
-        <ExampleComponent 
-          title="Schedule station (station id)" 
-          description="Test" 
-          path="/station/:station_id/schedules" 
+    <div id="content" class="space-y-20">
+      <div id="stations">
+        <ExampleComponent
+          section_id="stations"
+          title="Stations"
+          description="Menampilkan semua data station MRT jakarta"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/stations"
+          api_method="GET"
+          api_parameter={[]}
+          iframe_url="https://gist.github.com/reksamamur/77f1563dc46f73fb72bd92280007dee9.js"
         />
       </div>
 
-      <div id="station.id.schedules.now">
-        <h1>End point</h1>
-        <h1>end point name</h1>
-        <h1>url api</h1>
-        <h1>example</h1>
-      </div>
-      
-      <div id="station.id.schedules.milliseconds">
-        <h1>End point</h1>
-        <h1>end point name</h1>
-        <h1>url api</h1>
-        <h1>example</h1>
+      <div id="station_id">
+        <ExampleComponent
+          section_id="station_id"
+          title="Station (station id)"
+          description="Menampilkan data satu station berdasarkan parameter id station yang diberikan"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/station/38"
+          api_method="GET"
+          api_parameter={[38]}
+          iframe_url="https://gist.github.com/reksamamur/c854c6bdc58fbab5599c9406d3fb5f4f.js"
+        />
       </div>
 
-      <div id="station.id.retails">
-        <h1>End point</h1>
-        <h1>end point name</h1>
-        <h1>url api</h1>
-        <h1>example</h1>
+      <div id="schedules">
+        <ExampleComponent
+          section_id="schedules"
+          title="Schedule station (station id)"
+          description="Menampilkan data schedule dari satu station berdasarkan parameter id station yang diberikan"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/station/38/schedules"
+          api_method="GET"
+          api_parameter={[38]}
+          iframe_url="https://gist.github.com/reksamamur/a0123beef3ec8020b2fa0fc1d178fe30.js"
+        />
       </div>
 
-      <div id="station.id.facilities">
-        <h1>End point</h1>
-        <h1>end point name</h1>
-        <h1>url api</h1>
-        <h1>example</h1>
+      <div id="schedule_now">
+        <ExampleComponent
+          section_id="schedule_now"
+          title="Schedule station now (station id)"
+          description="Menampilkan data schedule saat ini dari satu station berdasarkan parameter id station yang diberikan"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/station/38/schedules/now"
+          api_method="GET"
+          api_parameter={[38, "now"]}
+          iframe_url="https://gist.github.com/reksamamur/72bdc4b1e5990cbdc5d827459320958d.js"
+        />
       </div>
 
-      <div id="station.id.estimates.next_id">
-        <h1>End point</h1>
-        <h1>end point name</h1>
-        <h1>url api</h1>
-        <h1>example</h1>
+      <div id="schedule_milliseconds">
+        <ExampleComponent
+          section_id="schedule_milliseconds"
+          title="Schedule station milliseconds(station id)"
+          description="Menampilkan data schedule berdasarkan millisecond dari satu station berdasarkan parameter id station yang diberikan"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/station/38/schedules/1672461394371"
+          api_method="GET"
+          api_parameter={[38, "1672461394371"]}
+          iframe_url="https://gist.github.com/reksamamur/b0dddd7b3bcb626f078c8ac39d719236.js"
+        />
+      </div>
+
+      <div id="estimate">
+        <ExampleComponent
+          section_id="estimate"
+          title="Estimate from (station id) to (next station id)"
+          description="Menampilkan data estimate berupa harga dan waktu dari 2 station berdasarkan parameter id station yang diberikan"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/station/38/estimates/30"
+          api_method="GET"
+          api_parameter={[38, 30]}
+          iframe_url="https://gist.github.com/reksamamur/eddf69087e506b3ad927563222dc170f.js"
+        />
+      </div>
+
+      <div id="retail">
+        <ExampleComponent
+          section_id="retail"
+          title="Retail station (station id)"
+          description="Menampilkan data retail pada satu station berdasarkan parameter id station yang diberikan"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/station/38/retails"
+          api_method="GET"
+          api_parameter={[38]}
+          iframe_url="https://gist.github.com/reksamamur/7410dca323346092e8c77185ddab9c20.js"
+        />
+      </div>
+
+      <div id="facilities">
+        <ExampleComponent
+          section_id="facilities"
+          title="Facilities station (station id)"
+          description="Menampilkan data facilities station pada satu station berdasarkan parameter id station yang diberikan"
+          api_url="https://mrt-jakarta-api-production.up.railway.app/v1/station/38/facilities"
+          api_method="GET"
+          api_parameter={[38]}
+          iframe_url="https://gist.github.com/reksamamur/e343aa8c905ae34039ca05509d59272a.js"
+        />
       </div>
 
     </div>
 
-    <div id="footer" class="flex flex-col space-y-4">
-      <div>
-        <h2 class="text-2xl font-medium">API reference</h2>
-
-        <div>
-          Resource Information
-          <li>Response format</li>
-          <li>Require auth?</li>
-          <li>Rate limited?</li>
-        </div>
-        <div>Parameters</div>
-      </div>
-    </div>
   </body>
 </html>
+
+<style>
+  :global(html) {
+    /* ...TRUNCATED */
+
+    color: hsl(
+      var(--colour-text-hue) var(--colour-text-saturation)
+        var(--colour-text-luminance)
+    );
+
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+  }
+</style>

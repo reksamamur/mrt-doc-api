@@ -1,35 +1,75 @@
 ---
-export interface Props {
+
+export type Props = {
+  section_id: string;
   title: string;
   description: string;
-  path: string;
-  //   iframeURL: string;
+  api_url: string;
+  api_method: string;
+  api_parameter: (string|number)[];
+  iframe_url: string;
 }
 
-const { title, description, path } = Astro.props;
+const { section_id, title, description, api_url, api_method, api_parameter, iframe_url } = Astro.props;
+
+const locationHref = `#${section_id}`;
+const iframeSource = `
+data:text/html;charset=utf-8,
+<head><base target='_blank' /></head>
+<body><script src='${iframe_url}'></script>
+</body>
+`
+
 ---
 
 <div class="space-y-6">
-  <h1 class="font-medium py-2 text-4xl">{title}</h1>
+  <a class="font-bold py-2 text-xl hover:underline" href={locationHref}>
+    {title}
+  </a>
 
-  <div class="space-y-2">
-    <h3 class="text-3xl font-medium">Path</h3>
-    <div class="flex">
-      <p
-        class="bg-gray-100 p-1 rounded text-red-600 font-source-code-pro text-2xl"
-      >
-        {path}
-      </p>
-    </div>
-  </div>
-
-  <div class="space-y-2">
-    <h3 class="text-3xl font-medium">Description</h3>
-    <p class="text-lg">{description}</p>
+  <div class="space-y-1">
+    <h3 class="text-base font-bold">Description</h3>
+    <p class="text-base">{description}</p>
   </div>
 
   <div class="space-y-4">
-    <h3 class="text-3xl font-medium">Example</h3>
+    <h3 class="text-base font-bold">Example</h3>
+    <div class="space-y-4">
+      <table class="w-full border text-left">
+        <tr class="flex">
+          <th class="flex-shrink-0 w-52 p-2 border-b bg-gray-50">URL</th>
+          <td class="flex-1 p-2 border-b border-l bg-white">
+            <a 
+              class="hover:underline hover:text-blue-500"
+              href={api_url}
+              target="_blank"
+            >
+              {api_url}
+            </a>
+          </td>
+        </tr>
+        <tr class="flex">
+          <th class="flex-shrink-0 w-52 p-2 border-b bg-gray-50">Method</th>
+          <td class="flex-1 p-2 border-b border-l bg-white">{api_method}</td>
+        </tr>
+        {
+          api_parameter.map((item, index) => (
+            <tr class="flex">
+              <th class="flex-shrink-0 w-52 p-2 border-b bg-gray-50">Parameter {index + 1}</th>
+              <td class="flex-1 p-2 border-b border-l bg-white">{item}</td>
+            </tr>
+          ))
+        }
+      </table>
+    </div>
     
+    <div class="space-y-1">
+      <h3 class="text-base font-bold">Results</h3>
+      <iframe
+        style="width: 100%; height: 15rem;"
+        id="iframe"
+        src={iframeSource}>
+      </iframe>
+    </div>
   </div>
 </div>
